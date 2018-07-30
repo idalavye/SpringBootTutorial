@@ -1,4 +1,4 @@
-package com.idalavye.petclinic.web;
+package com.idalavye.petclinic.security;
 
 import com.idalavye.petclinic.service.PetClinicService;
 import org.junit.Test;

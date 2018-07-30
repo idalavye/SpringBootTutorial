@@ -16,9 +16,9 @@
 <body>
 
     <form:form modelAttribute="owner" method="post">
-        First Name : <form:input path="firstName"></form:input> <br>
-        Last Name : <form:input path="lastName"></form:input> <br>
-        <form:button name="submit">Update</form:button>
+        First Name : <form:input disabled="true" path="firstName"></form:input> <br>
+        Last Name : <form:input disabled="true" path="lastName"></form:input> <br>
+        <form:button name="submit">Delete</form:button>
     </form:form>
 
 </body>

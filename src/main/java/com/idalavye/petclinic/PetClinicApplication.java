@@ -16,6 +16,5 @@ public class PetClinicApplication {
 
 /*
     http://localhost:8080/actuator/health
-
     http://localhost:8080/actuator/env => İzin verdik
 */

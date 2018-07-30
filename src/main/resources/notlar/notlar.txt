@@ -1,0 +1,11 @@
+Servlet, Tomcat, Filter kavramları nedir ne işe yarar ?
+
+Servlet, java web uygulamalarında dinamik web içeriği üretmeyi sağlayan web server üzerinde çalışan java nesnesidir. HTTP isteği web server tarafından eşleşen Servlet nesnesine delege edilir, Servlet'da web isteğini handle ederek bir HTTP response üretir.
+
+Filter ise HTTP isteği Servlet veya herhangi bir statik web resource (index.html, logo.png gibi)'a erişmeden önce ve, eriştikten sonra HTTP response dönerken devreye giren yine web sunucu tarafında çalışan java nesnesidir. Web isteğini "intercept" etmeye yarar. Bu interception sırasında web isteği veya dönen cevap üzerinde istenen değişiklik/müdahale vs yapılabilir.
+
+Tomcat ise Servlet,Filter gibi Java nesnelerini çalıştırma kabiliyetine sahip web sunucusudur. Bu gibi Java nesnelerini çalıştıran sunucular web container şeklinde de tabir edilmektedir.
+
+src/main/resources dizini altındaki dosyalar deployment sırasında WEB-INF/classes altına yer alırlar ve bu dizin altına tarayıcı üzerinden doğrudan erişmek mümkün değildir. O yüzden normal şartlarda statik veya dinamik web resource'ları bu dizin altına konmaz. Ancak Spring Boot src/main/resources, dolayısı ile classpath altında yer alan bu tür web resource'larına yönelik bir web isteği geldiğinde bunu handle edip, eşleşen web resource'un içeriğini classpath'den döndürmektedir.
+
+WEB-INF dizini altındaki hiçbirşeye runtime'da tarayıcı üzerinden erişmek mümkün değildir. Ancak bir Servlet veya Filter vasıtası ile dolaylı yoldan erişim söz konusu olabilir. JSP gibi dinamik web sayfalarını WEB-INF altında jsp gibi bir dizin altına koyma nedeni de bu sayfalara doğrudan tarayıcı üzerinden erişilmesine engel olmaktır. Web isteği önce ilgili bir Servlet tarafından handle edilmeli, iş mantığı çalıştırılmalı ve bu Servlet render edilecek, yani görüntülenecek JSP sayfasına karar verip web isteğini ona yönlendirmelidir. Bu konu ile ilgili "Front Controller" örüntüsünü anlattığımız ders üzerinde biraz daha yoğunlaşmanızı tavsiye ederim.

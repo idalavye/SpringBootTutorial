@@ -1,3 +1,18 @@
+--INSERT INTO USERS VALUES('user1','{noop}secret',TRUE);
+--INSERT INTO USERS VALUES('user2','{noop}secret',TRUE);
+--INSERT INTO USERS VALUES('user3','{noop}secret',TRUE);
+
+INSERT INTO USERS VALUES('user1','{bcrypt}$2a$10$W1HdAPRUVR/9IF2r60QjN.xq.eYcRScpaQDuBNw2Gq3q1vvtezMH6',TRUE);
+INSERT INTO USERS VALUES('user2','{bcrypt}$2a$10$cPszfrrpXgL8.TQC952mN.9WxxOCUpSTNDLhWwNM0.oiUJbXfVJUy',TRUE);
+INSERT INTO USERS VALUES('user3','{bcrypt}$2a$10$Kv7OjyFFQ8xkrRpotSLeTugjuTBt2dWkb2M19yLiBpXg1rL73XFK.',TRUE);
+
+INSERT INTO AUTHORITIES VALUES('user1','ROLE_USER');
+INSERT INTO AUTHORITIES VALUES('user2','ROLE_USER');
+INSERT INTO AUTHORITIES VALUES('user2','ROLE_EDITOR');
+INSERT INTO AUTHORITIES VALUES('user3','ROLE_USER');
+INSERT INTO AUTHORITIES VALUES('user3','ROLE_EDITOR');
+INSERT INTO AUTHORITIES VALUES('user3','ROLE_ADMIN');
+
 insert into t_owner(id,first_name,last_name) values (1,'Ziya','Ferit');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (2, 'Beşir', 'Dal');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (3, 'Eda', 'Rize');
